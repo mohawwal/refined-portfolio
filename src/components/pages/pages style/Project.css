@@ -9,7 +9,7 @@
 
 .portfolio-app:hover,
 .portfolio-app:focus {
-  border: 1px solid rgba(94, 16, 128, 0.545);
+  border: 1px solid rgb(115, 107, 227);
   border-radius: 5px;
 }
 
