@@ -1,0 +1,196 @@
+body {
+  background-color: black;
+  color: white;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+  font-family: "Inter", sans-serif;
+}
+
+.about {
+  position: relative;
+}
+
+.aboutImages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10%;
+}
+
+.aboutImages img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.aboutDetails {
+  margin: 40px 0;
+}
+
+.about_lang {
+  margin: 80px 0;
+}
+
+.lang {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.about_img {
+  min-width: 80px;
+  max-width: 100px;
+  height: 100px;
+  margin: 20px 25px;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.about_img img {
+  height: 60%;
+}
+
+.about_img p {
+  height: 40%;
+}
+
+.head-text {
+  background-color: rgba(0, 0, 0, 0.674);
+  position: sticky;
+  top: 0;
+  padding: 4% 0;
+  z-index: 30;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-size: 1.8rem;
+}
+
+.about-btn button {
+  width: 200px;
+}
+
+.work h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.work-screen-icon {
+  font-size: 15px;
+}
+
+.work-details {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  height: 100%;
+}
+
+.work-icon {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(51, 51, 51, 0.877);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.work-line {
+  height: 100%;
+  width: 1px;
+  background-color: rgb(77, 77, 77);
+}
+
+.date p {
+  color: rgb(232, 232, 232);
+  background-color: rgb(32, 32, 32);
+  line-height: 1.2;
+  font-size: 0.6rem;
+  padding: 5px 6px;
+  width: 170px;
+  border-radius: 20px;
+}
+
+.experience-head-text {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.experience-details {
+  margin-top: 15px;
+}
+
+.experience-details h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.experience-details span {
+  font-size: 0.8rem;
+  color: rgb(197, 197, 197);
+  font-style: italic;
+  margin-left: 10px;
+}
+
+.experience-details p {
+  font-size: 1rem;
+}
+
+.experience-list ul {
+  margin-top: 10px;
+}
+
+.experience-list ul li {
+  display: flex;
+  margin-left: 15px;
+  margin-top: 3px;
+  font-size: 0.9rem;
+  gap: 10px;
+}
+
+.education {
+  margin-top: 30px;
+}
+
+.education h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 577px) {
+  .head-text {
+    font-size: 10px;
+    text-align: left;
+    margin-top: -15%;
+  }
+}
+
+@media screen and (min-width: 577px) {
+  .about {
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .about_img {
+    margin: 30px 50px;
+  }
+}
+
+@media screen and (min-width: 1090px) {
+  .about_img {
+    margin: 30px 25px;
+  }
+}

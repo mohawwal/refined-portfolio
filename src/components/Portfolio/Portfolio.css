@@ -1,0 +1,25 @@
+.portfolio {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
+  width: 100%;
+  max-width: 1800px;
+}
+
+.project-portfolio {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+li {
+  list-style: none;
+}
+
+.head-text {
+  width: 100%;
+}

@@ -1,0 +1,157 @@
+.contact {
+  display: flex;
+  align-items: flex-start;
+  gap: 5%;
+  flex-direction: row;
+  width: 100%;
+}
+
+.contact-message {
+  width: 30%;
+}
+
+.details-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.contact-message h2 {
+  font-weight: 600;
+  line-height: 80px;
+  font-size: 1.5rem;
+}
+
+.social-contact div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 25px;
+}
+
+.social-media {
+  margin-top: 10px;
+}
+
+.social-media .media {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 20px;
+}
+
+.command-text {
+  color: rgb(255, 248, 236);
+  font-weight: 500;
+}
+.media-icon {
+  font-size: 1.5rem;
+  color: white;
+  background-color: rgb(31, 31, 31);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.social-media-icons {
+  margin: 30px 0;
+  height: 5dvh;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 60%;
+}
+
+.social-media-icons .icon {
+  font-size: 18px;
+  background-color: rgb(23, 23, 23);
+  padding: 12px;
+  border-radius: 50%;
+}
+.contact-details {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.details-input {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+  width: 100%;
+}
+.input-text {
+  width: 100%;
+}
+
+.input-text input {
+  width: 100%;
+  height: 38px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(38, 38, 38);
+  padding: 10px;
+}
+
+.message-text {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.message-text textarea {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 300px;
+  max-height: 300px;
+  background-color: rgb(38, 38, 38);
+  padding: 20px;
+  border: none;
+}
+
+.details-input .input-text p,
+.message-text p {
+  font-size: 1rem;
+  color: aliceblue;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.message-btn {
+  width: 30%;
+}
+
+@media screen and (max-width: 1100px) {
+  .contact {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-message {
+    width: 95%;
+  }
+  .social-media-icons {
+    max-width: 30%;
+  }
+  .message-btn {
+    width: 40%;
+  }
+  .contact-details {
+    width: 94%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .details-input {
+    flex-direction: column;
+  }
+  .message-text textarea {
+    height: 200px;
+  }
+  .message-btn {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
