@@ -1,7 +1,5 @@
 .body {
-  background-color: black;
   height: 92vh;
-  color: white;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -15,11 +13,6 @@
 
 .bodyImage {
   display: none;
-}
-
-button {
-  cursor: pointer;
-  border: 2px solid snow;
 }
 
 a {
@@ -45,21 +38,28 @@ a {
 }
 
 button {
-  background-color: rgb(115, 107, 227);
+  background-color: rgb(213, 169, 255);
   padding: 20px 40px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   margin-top: 20px;
   color: black;
+  cursor: pointer;
 }
+
+/* button.light {
+  background-color: rgb(55, 14, 94);
+  color: rgb(129, 0, 0);
+} */
 
 button a {
   color: black;
 }
 
 .bodyName {
-  color: rgb(115, 107, 227);
+  color: rgb(213, 169, 255);
 }
+
 .bodyNav,
 .space,
 .image-space {
@@ -92,6 +92,7 @@ button a {
     width: 220px;
     height: 220px;
     border-radius: 50%;
+    border: 3px solid whitesmoke;
   }
   .bodyImage img {
     width: 100%;
@@ -137,7 +138,7 @@ button a {
     width: 35%;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    background-color: rgb(115, 107, 227);
+    background-color: rgb(213, 169, 255);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -149,7 +150,6 @@ button a {
     height: 90%;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    border: 3px solid rgba(255, 255, 255, 0.415);
   }
 
   .image-space {

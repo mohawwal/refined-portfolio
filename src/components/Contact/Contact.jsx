@@ -20,20 +20,24 @@ const Contact = () => {
       <div className="contact">
         <div className="contact-message">
           <h2>LET'S DISCUSS!</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-            a reprehenderit quas odit asperiores veniam
+          <p className="cont-msg">
+            Get in touch with me to discuss new projects or creative ideas. I'm
+            open to exploring opportunities and collaborating on your visions.
           </p>
           <div className="social-contact">
             <div className="social-media">
-              <FontAwesomeIcon className="media-icon" icon={faEnvelope} />
+              <div>
+                <FontAwesomeIcon className="media-icon" icon={faEnvelope} />
+              </div>
               <div className="media">
                 <p className="command-text">MAIL ME</p>{" "}
                 <p>aanileleye@gmail.com</p>
               </div>
             </div>
             <div className="social-media">
-              <FontAwesomeIcon className="media-icon" icon={faPhone} />
+              <div>
+                <FontAwesomeIcon className="media-icon" icon={faPhone} />
+              </div>
               <div className="media">
                 <p className="command-text">CALL ME</p> <p>+234 815 912 4775</p>
               </div>

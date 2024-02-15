@@ -9,7 +9,7 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Front = () => {
+const Front = (props) => {
   const [menu, setMenu] = useState(false);
 
   const toggle = () => {
@@ -46,6 +46,12 @@ const Front = () => {
               <li>CONTACT</li>
             </Link>
           </ul>
+
+          {/* <div className="mode" onClick={props.toggleMode}>
+            <div className="dark">
+              <img src={props.darkMode} alt="" />
+            </div>
+          </div> */}
         </nav>
       </div>
       <div className="navHome">

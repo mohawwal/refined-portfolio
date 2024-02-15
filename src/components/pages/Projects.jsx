@@ -9,8 +9,12 @@ const Projects = (props) => {
     <div className="projects">
       <div className="portfolio-app">
         <div className="project-link-icon">
-          <FontAwesomeIcon className="icon" icon={faGithub} />
-          <FontAwesomeIcon className="icon" icon={faLink} />
+          <a href={props.githubLink} rel="noreferrer" target="_blank">
+            <FontAwesomeIcon className="icon" icon={faGithub} />
+          </a>
+          <a href={props.webLink} rel="noreferrer" target="_blank">
+            <FontAwesomeIcon className="icon" icon={faLink} />
+          </a>
         </div>
         <div className="portfolio-content">
           <h4>{props.name}</h4>

@@ -9,7 +9,7 @@
 
 .portfolio-app:hover,
 .portfolio-app:focus {
-  border: 1px solid rgb(115, 107, 227);
+  border: 1px solid rgb(213, 169, 255);
   border-radius: 5px;
 }
 
@@ -33,7 +33,7 @@
 
 .portfolio-content {
   font-family: "Inter", sans-serif;
-  height: 200px;
+  height: 250px;
   display: flex;
   flex-direction: column;
 }
@@ -45,7 +45,7 @@
 }
 
 .portfolio-content p {
-  height: 35%;
+  height: 40%;
 }
 
 .portfolio-content p,

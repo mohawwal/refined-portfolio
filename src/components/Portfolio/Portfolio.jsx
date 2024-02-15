@@ -19,6 +19,8 @@ const Portfolio = () => {
               name={item.name}
               description={item.description}
               languages={item.languages}
+              githubLink={item.githubLink}
+              webLink={item.webLink}
             />
           );
         })}

@@ -8,7 +8,6 @@ import firebase from "../File/Image/google-firebase-icon.png";
 import nodejs from "../File/Image/node-js-icon.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
-import { faHandPointRight } from "@fortawesome/free-regular-svg-icons";
 
 const About = (props) => {
   return (
@@ -18,18 +17,20 @@ const About = (props) => {
           ABOUT <span>ME</span>
         </h1>
       </div>
+      <div className="aboutImages">
+        <img src={props.profileImg} alt="" />
+      </div>
       <div className="aboutDetails">
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur nemo
-          quam, aliquam voluptas atque dolorum asperiores consequuntur,
-          voluptatem, consequatur officiis architecto iste odit suscipit et
-          perspiciatis laboriosam cupiditate doloremque modi. Lorem, ipsum dolor
-          sit amet consectetur adipisicing elit. Rerum aliquid ducimus
-          architecto cumque laudantium eligendi ipsa aspernatur quibusdam!
-          Quidem deleniti ea iusto distinctio aspernatur rem veniam harum ut
-          nisi architecto! Lorem ipsum dolor sit, amet consectetur adipisicing
-          elit. Sapiente eveniet earum quasi, ab aspernatur esse ex quo quis,
-          non corporis architecto vitae,
+          I am a dedicated <span>Frontend developer</span> proficient in
+          <span> React, Angular, TypeScript, </span> and <span>JavaScript</span>
+          . I am deeply passionate about crafting exceptional web experiences
+          and continuously expanding my skill set in software engineering. With
+          a strong work ethic and unwavering commitment, I thrive in
+          collaborative environments where I can contribute my creativity and
+          expertise to drive projects forward. My goal is to leverage my skills
+          to create innovative and user-friendly digital solutions that make a
+          lasting impact.
         </p>
       </div>
       <div className="about-btn">
@@ -77,45 +78,52 @@ const About = (props) => {
           </div>
           <div className="work-experience">
             <div className="date">
-              <p>AUGUST 2023 - NOVEMBER 2024</p>
+              <p>JANUARY 2023 - MARCH 2024</p>
             </div>
             <div className="experience-details">
               <div className="experience-head-text">
-                <h1>BODEMAN -</h1>
+                <h1>Toshies NFT -</h1>
                 <span> FRONTEND ENGINEER [REMOTE]</span>
               </div>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Blanditiis recusandae pariatur doloribus inventore
-                necessitatibus magnam aperiam error, fuga voluptatibus possimus
-                reiciendis quis incidunt quisquam dolor earum quod beatae
-                molestias eaque.
+                I collaborated with a peer on Twitter to build a React-based
+                website for the Toshies NFT project. The objective was to
+                qualify for the project's whitelist by creating an informative
+                platform that highlighted project details, founder information,
+                and the upcoming mint date.
               </p>
             </div>
             <div className="experience-list">
               <ul>
                 <li>
-                  <FontAwesomeIcon icon={faHandPointRight} />
+                  👉🏼
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Developed a responsive and user-friendly website using
+                    React, Javascript and CSS to effectively present essential
+                    project information.
                   </p>
                 </li>
                 <li>
-                  <FontAwesomeIcon icon={faHandPointRight} />
+                  👉🏼
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Collaborated remotely with a fellow developer, utilizing Git
+                    for version control to ensure efficient code management and
+                    collaboration.{" "}
                   </p>
                 </li>
                 <li>
-                  <FontAwesomeIcon icon={faHandPointRight} />
+                  👉🏼
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Successfully contributed to the project's achievement of
+                    whitelist qualification through the completion of the
+                    website.{" "}
                   </p>
                 </li>
                 <li>
-                  <FontAwesomeIcon icon={faHandPointRight} />
+                  👉🏼
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Demonstrated strong communication skills by coordinating
+                    design and functionality decisions with the project partner.
                   </p>
                 </li>
               </ul>

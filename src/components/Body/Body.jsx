@@ -11,15 +11,15 @@ export default function Body(props) {
       <div className="space image-space"></div>
       <div className="body-space">
         <div className="bodyText">
-          <p className="bodyGreet">HI THERE </p>
+          <p className="bodyGreet">HI THERE 😉 </p>
           <h2>
             I'm <span className="bodyName">Anileleye Awwal</span>
           </h2>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat,
-            sapiente dolor. Dolore quia neque tempora corporis quis laborum
-            nesciunt nemo, nihil explicabo expedita, id voluptas unde, aliquid
-            nulla quae amet? Lorem
+            I am a passionate frontend developer with expertise in CSS, React,
+            Angular, JavaScript, TypeScript. Driven by a constant desire to
+            learn, I am currently expanding my skills in various aspects of
+            software engineering.
           </p>
         </div>
         <div className="body_button right-button">

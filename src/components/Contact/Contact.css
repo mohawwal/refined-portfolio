@@ -4,6 +4,10 @@
   gap: 5%;
   flex-direction: row;
   width: 100%;
+  transform: scale(1.05);
+  transition: 0.6s;
+  font-size: 0.9rem;
+  margin-top: 3%;
 }
 
 .contact-message {
@@ -23,26 +27,32 @@
   font-size: 1.5rem;
 }
 
+/* .contact-message .cont-msg {
+  width: 80%;
+} */
+
 .social-contact div {
   display: flex;
   align-items: center;
   flex-direction: row;
-  margin-top: 25px;
+  margin-top: 15px;
 }
 
 .social-media {
-  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
 }
 
 .social-media .media {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 20px;
 }
 
 .command-text {
-  color: rgb(255, 248, 236);
+  color: rgb(180, 180, 180);
   font-weight: 500;
 }
 .media-icon {
@@ -61,6 +71,7 @@
   flex-direction: row;
   justify-content: space-between;
   max-width: 60%;
+  gap: 10px;
 }
 
 .social-media-icons .icon {
@@ -92,6 +103,7 @@
   border: none;
   background-color: rgb(38, 38, 38);
   padding: 10px;
+  color: white;
 }
 
 .message-text {
@@ -102,11 +114,12 @@
 .message-text textarea {
   min-width: 100%;
   max-width: 100%;
-  min-height: 300px;
-  max-height: 300px;
+  min-height: 250px;
+  max-height: 250px;
   background-color: rgb(38, 38, 38);
   padding: 20px;
   border: none;
+  color: white;
 }
 
 .details-input .input-text p,
@@ -119,6 +132,13 @@
 
 .message-btn {
   width: 30%;
+}
+
+@media (min-width: 1100px) and (max-width: 1354px) {
+  .contact-details {
+    width: 56%;
+    margin: 0 auto;
+  }
 }
 
 @media screen and (max-width: 1100px) {
@@ -140,6 +160,9 @@
   .contact-details {
     width: 94%;
     margin: 0 auto;
+  }
+  .contact-message .cont-msg {
+    width: 80%;
   }
 }
 

@@ -1,21 +1,10 @@
-body {
-  background-color: black;
-  color: white;
-  width: 90%;
-  margin: 0 auto;
-  max-width: 1200px;
-  font-family: "Inter", sans-serif;
-}
-
 .about {
   position: relative;
 }
 
 .aboutImages {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 10%;
+  display: none;
 }
 
 .aboutImages img {
@@ -24,10 +13,19 @@ body {
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
+  border: 3px solid whitesmoke;
 }
 
 .aboutDetails {
-  margin: 40px 0;
+  margin: 30px 0;
+}
+
+.aboutDetails p {
+  color: rgb(197, 197, 197);
+}
+
+.aboutDetails p span {
+  color: white;
 }
 
 .about_lang {
@@ -59,7 +57,7 @@ body {
 }
 
 .head-text {
-  background-color: rgba(0, 0, 0, 0.674);
+  /* background-color: rgba(0, 0, 0, 0.674); */
   position: sticky;
   top: 0;
   padding: 4% 0;
@@ -133,7 +131,7 @@ body {
 }
 
 .experience-details h1 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 
@@ -154,8 +152,8 @@ body {
 
 .experience-list ul li {
   display: flex;
-  margin-left: 15px;
-  margin-top: 3px;
+  margin-left: 5px;
+  margin-top: 10px;
   font-size: 0.9rem;
   gap: 10px;
 }
@@ -168,6 +166,15 @@ body {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 500;
+}
+
+@media screen and (max-width: 500px) {
+  .aboutImages {
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 577px) {

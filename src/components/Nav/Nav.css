@@ -1,6 +1,6 @@
 .navHeader {
   width: 100%;
-  height: 8vh;
+  height: 9vh;
   font-family: "Poppins", sans-serif;
 }
 
@@ -23,17 +23,23 @@ nav {
   position: fixed;
   z-index: 70;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transform: scale(1.05);
+  transition: 0.6s;
 }
 
 .hamburger div {
-  width: 90%;
+  width: 70%;
   height: 2.5px;
   display: flex;
   align-items: center;
   border-radius: 2px;
   background-color: rgb(241, 241, 241);
-  transition: opacity 0.3s ease;
+  transform: scale(1.05);
+  transition: 0.6s;
+}
+
+.hamburger div.light {
+  background-color: black;
 }
 
 .hamburger.active div:nth-child(2) {
@@ -52,6 +58,7 @@ nav .mobile-nav-list {
   position: fixed;
   display: flex;
   top: 0;
+  left: 0;
   background-color: rgb(0, 0, 0);
   width: 100%;
   height: 100vh;
@@ -64,9 +71,8 @@ nav .mobile-nav-list {
 }
 
 .mobile-nav-list li {
-  background-color: rgb(34, 34, 34);
   padding: 10px 15px;
-  border-radius: 15px;
+  border-bottom: 1px solid rgba(213, 169, 255, 0.627);
   cursor: pointer;
   margin-top: 50px;
   margin-left: 10%;
@@ -82,7 +88,41 @@ nav .mobile-nav-list {
 } */
 
 h1 span {
-  color: rgb(115, 107, 227);
+  color: rgb(213, 169, 255);
+}
+
+.mode {
+  width: 50px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 3%;
+  z-index: 120;
+  opacity: 35%;
+}
+
+.mode:hover,
+.mode:focus {
+  opacity: 100%;
+}
+
+.light img {
+  background-color: black;
+  width: 100%;
+  border: 2px solid rgb(0, 0, 0);
+}
+.dark img {
+  background-color: white;
+  width: 100%;
+  border: 2px solid rgb(233, 233, 233);
+}
+
+.mode img {
+  width: 50px;
+  height: 50px;
+  object-position: center;
+  object-fit: contain;
+  border-radius: 50%;
 }
 
 @media screen and (min-width: 577px) {
@@ -134,7 +174,7 @@ h1 span {
 
   .screen-nav:hover,
   .screen-nav:focus {
-    background-color: blueviolet;
+    background-color: rgb(213, 169, 255);
   }
 
   .screen-icon {
