@@ -3,9 +3,16 @@ import "./Portfolio.css";
 import Projects from "../pages/Projects";
 import projectWorks from "../File/Projects";
 
+import { motion } from "framer-motion";
+
 const Portfolio = () => {
   return (
-    <div className="portfolio">
+    <motion.div
+      className="portfolio"
+      intial={{ width: 1 }}
+      animate={{ width: "100%" }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}
+    >
       <div className="head-text">
         <h1>
           MY<span> PORTFOLIO</span>
@@ -25,7 +32,7 @@ const Portfolio = () => {
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

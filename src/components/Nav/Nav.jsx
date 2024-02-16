@@ -9,6 +9,8 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
+import { motion } from "framer-motion";
+
 const Front = (props) => {
   const [menu, setMenu] = useState(false);
 
@@ -25,10 +27,13 @@ const Front = (props) => {
             <div></div>
             <div></div>
           </div>
-          <ul
+          <motion.ul
             className="mobile-nav-list"
             style={{ display: menu ? "block" : "none" }}
             onClick={toggle}
+            intial={{ opacity: 1 }}
+            animate={{ opacity: 3 }}
+            exit={{ opacity: 0 }}
           >
             <Link to="/">
               <li>HOME</li>
@@ -45,7 +50,7 @@ const Front = (props) => {
             <Link to="/CONTACT">
               <li>CONTACT</li>
             </Link>
-          </ul>
+          </motion.ul>
 
           {/* <div className="mode" onClick={props.toggleMode}>
             <div className="dark">

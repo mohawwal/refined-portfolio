@@ -9,9 +9,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./Contact.css";
 
+import { motion } from "framer-motion";
+
 const Contact = () => {
   return (
-    <div>
+    <motion.div
+      intial={{ opacity: 1 }}
+      animate={{ opacity: 3 }}
+      exit={{ opacity: 0 }}
+    >
       <div className="head-text">
         <h1>
           GET IN <span>TOUCH</span>
@@ -74,7 +80,7 @@ const Contact = () => {
           <button className="message-btn">GET IN TOUCH</button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
