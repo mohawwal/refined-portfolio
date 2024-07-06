@@ -106,7 +106,7 @@ h1 span {
   }
 }
 
-@media screen and (min-width: 1053px) {
+@media screen and (min-width: 1110px) {
   .navHome {
     display: block;
     position: fixed;
@@ -132,9 +132,8 @@ h1 span {
     align-items: center;
     justify-content: center;
   }
-
-  .screen-nav:hover,
-  .screen-nav:focus {
+ 
+  .screen-active {
     background-color: rgb(213, 169, 255);
   }
 
