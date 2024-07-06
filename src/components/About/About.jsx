@@ -9,16 +9,11 @@ import nodejs from "../File/Image/node-js-icon.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 
-import { motion } from "framer-motion";
 
 const About = (props) => {
   return (
-    <motion.div
-      className="about"
-      intial={{ opacity: 1 }}
-      animate={{ opacity: 3 }}
-      exit={{ opacity: 0 }}
-    >
+    <div
+      className="about">
       <div className="head-text">
         <h1>
           ABOUT <span>ME</span>
@@ -140,7 +135,7 @@ const About = (props) => {
       </div>
 
       <div className="aboutDetails"></div>
-    </motion.div>
+    </div>
   );
 };
 

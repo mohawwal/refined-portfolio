@@ -1,16 +1,10 @@
 import React from "react";
 import "./Body.css";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 
 export default function Body(props) {
   return (
-    <motion.div
-      className="body"
-      intial={{ width: 1 }}
-      animate={{ width: "100%" }}
-      exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}
-    >
+    <div className="body">
       <div className="bodyImage">
         <img src={props.profileImg} alt="" />
       </div>
@@ -35,6 +29,6 @@ export default function Body(props) {
         </div>
       </div>
       <div className="space"></div>
-    </motion.div>
+    </div>
   );
 }

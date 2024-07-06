@@ -27,9 +27,9 @@
   font-size: 1.5rem;
 }
 
-/* .contact-message .cont-msg {
+.contact-message .cont-msg {
   width: 80%;
-} */
+}
 
 .social-contact div {
   display: flex;
@@ -92,8 +92,23 @@
   gap: 15px;
   width: 100%;
 }
+
 .input-text {
   width: 100%;
+  height: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.errorMsg {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 5px;
+  color: red;
+  font-size: 13px;
 }
 
 .input-text input {
@@ -101,25 +116,26 @@
   height: 38px;
   border-radius: 10px;
   border: none;
-  background-color: rgb(38, 38, 38);
   padding: 10px;
   color: white;
+  background-color: rgb(38, 38, 38);
 }
 
 .message-text {
   width: 100%;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
-.message-text textarea {
+.message-text .textarea {
   min-width: 100%;
   max-width: 100%;
   min-height: 250px;
   max-height: 250px;
-  background-color: rgb(38, 38, 38);
-  padding: 20px;
-  border: none;
+  background: none;
+  border: 1px solid rgba(245, 245, 245, 0.338);
+  border-radius: 10px;
   color: white;
+  padding: 10px;
 }
 
 .details-input .input-text p,
@@ -132,12 +148,21 @@
 
 .message-btn {
   width: 30%;
+  position: relative;
+  z-index: 100;
+}
+
+.recap {
+  margin-top: 20px;
 }
 
 @media (min-width: 1100px) and (max-width: 1354px) {
   .contact-details {
     width: 56%;
     margin: 0 auto;
+  }
+  .input-text {
+    width: 100%;
   }
 }
 
@@ -170,7 +195,7 @@
   .details-input {
     flex-direction: column;
   }
-  .message-text textarea {
+  .message-text .textarea {
     height: 200px;
   }
   .message-btn {
