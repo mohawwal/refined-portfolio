@@ -15,8 +15,25 @@ import * as Yup from "yup";
 import ReCAPTCHA from "react-google-recaptcha";
 
 import axios from "axios";
+import {motion} from "framer-motion"
 
 const Contact = () => {
+	const textVariants = {
+		initial: {
+		  x: -500,
+		  opacity:0
+		},
+		animate: {
+		  x: 0,
+		  opacity: 1,
+		  transition: {
+			duration: 1,
+			staggerChildren: 0.1
+		  }
+		},
+		
+	  }
+
 	const [isRecapChecked, setRecapChecked] = useState(false);
 
 	const onChange = () => {
@@ -68,9 +85,13 @@ const Contact = () => {
 	return (
 		<div>
 			<div className="head-text">
-				<h1>
+				<motion.h1
+					variants={textVariants}
+					initial="initial"
+					animate="animate"
+				>
 					GET IN <span>TOUCH</span>
-				</h1>
+				</motion.h1>
 			</div>
 			<div className="contact">
 				<div className="contact-message">

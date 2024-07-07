@@ -2,20 +2,24 @@
   display: flex;
 }
 
+.project-portfolio {
+  background-color: transparent;
+}
+
 .portfolio-app {
-  width: 500px;
-  margin: 10px 30px;
+  margin: 3%;
+  max-width: 500px;
+  max-height: 280px;
+  margin: 10px 25px;
 }
 
 .portfolio-app:hover,
 .portfolio-app:focus {
-  border: 1px solid rgb(213, 169, 255);
   border-radius: 5px;
+  border: 1px dashed  rgb(213, 169, 255);
+  padding: 5px;
 }
 
-.portfolio-content {
-  padding: 7px;
-}
 
 .project-link-icon {
   background-color: rgb(14, 8, 8);
@@ -33,9 +37,11 @@
 
 .portfolio-content {
   font-family: "Inter", sans-serif;
+  padding: 7px;
   height: 250px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 }
 
 .portfolio-content h4 {
@@ -48,17 +54,23 @@
   height: 40%;
 }
 
+.portfolio-languages {
+  height: 52px;
+  overflow: hidden;
+}
+
 .portfolio-content p,
 .portfolio-languages ul li {
   font-size: 0.8rem;
 }
 
 .portfolio-languages ul {
-  margin-top: 30px;
+  margin-top: 0px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   flex-direction: row;
-  gap: 10px;
+  gap: 5px;
 }
 
 .portfolio-languages ul li {
@@ -66,28 +78,4 @@
   background-color: rgb(28, 22, 22);
   padding: 5px;
   border-radius: 5px;
-}
-
-@media screen and (max-width: 595px) {
-  .portfolio-app {
-    width: 450px;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .portfolio-app {
-    width: 350px;
-  }
-}
-
-@media screen and (max-width: 440px) {
-  .portfolio-app {
-    width: 300px;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  .portfolio-app {
-    width: 200px;
-  }
 }

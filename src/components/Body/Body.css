@@ -1,6 +1,4 @@
 .body {
-  background-color: rgb(0, 0, 0);
-  height: 92vh;
   color: rgb(255, 255, 255);
   display: flex;
   align-items: flex-start;
@@ -65,6 +63,30 @@ button a {
   display: none;
 }
 
+.slidingTextContainer {
+  position: fixed;
+  font-size: 40vh;
+  bottom: -120px;
+  white-space: nowrap;
+  color: rgba(213, 169, 255, 0.152);
+  width: 50%;
+  font-weight: bold;
+  padding: 10px;
+}
+
+@media screen and (max-width: 499px) {
+  .body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+  }
+  .body {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 @media screen and (min-width: 500px) {
   .bodyText h2 {
     font-size: 40px;
@@ -91,6 +113,8 @@ button a {
     width: 220px;
     height: 220px;
     border-radius: 50%;
+    position: relative;
+    z-index: 5;
   }
   .bodyImage img {
     width: 100%;
@@ -160,6 +184,7 @@ button a {
   }
 
   .body-space {
+    position: relative;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
