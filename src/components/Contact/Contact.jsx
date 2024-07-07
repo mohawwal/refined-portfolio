@@ -4,6 +4,8 @@ import {
 	faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
+import { useEffect } from "react";
+
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -68,8 +70,16 @@ const Contact = () => {
 
 		if (response && response.data) {
 			setSuccess(response.data.message);
+			console.log("mail button clicked")
 		}
 	};
+
+	useEffect(() => {
+		if(success !== null) {
+			alert(success)
+			setSuccess(null)
+		}
+	},[success])
 
 	const formik = useFormik({
 		initialValues: initialValue,
@@ -78,9 +88,6 @@ const Contact = () => {
 		onSubmit,
 	});
 
-	const inputEmpty = () => {
-		return Object.values(formik.values).some(value => value.trim() === "")
-	}
 
 	return (
 		<div>
@@ -234,10 +241,10 @@ const Contact = () => {
 
 						<button
 							type="submit"
-							disabled={!isRecapChecked || inputEmpty()}
+							disabled={!isRecapChecked}
 							className="message-btn"
 						>
-							{success ? success : "GET IN TOUCH"}
+							{success ?  success : "GET IN TOUCH"}
 						</button>
 					</form>
 				</FormikProvider>
