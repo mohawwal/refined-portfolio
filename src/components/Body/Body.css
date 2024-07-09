@@ -81,11 +81,10 @@ button, .textBlack {
   font-size: 40vh;
   bottom: -120px;
   white-space: nowrap;
-  color: rgba(213, 169, 255, 0.152);
+  color: rgba(213, 169, 255, 0.193);
   width: 50%;
   font-weight: bold;
   padding: 10px;
-  background-color: aqua;
   z-index: 0;
 }
 
