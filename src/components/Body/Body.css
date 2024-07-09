@@ -13,7 +13,7 @@
 
 .body-space {
   position: relative;
-  z-index: 999;
+  z-index: 20;
 }
 
 .bodyImage {
@@ -81,7 +81,7 @@ button, .textBlack {
   font-size: 40vh;
   bottom: -120px;
   white-space: nowrap;
-  color: rgba(213, 169, 255, 0.193);
+  color: rgba(213, 169, 255, 0.138);
   width: 50%;
   font-weight: bold;
   padding: 10px;
@@ -205,7 +205,7 @@ button, .textBlack {
     justify-content: flex-start;
     width: 100%;
     margin-top: 100px;
-    z-index: 999;
+    z-index: 20;
   }
 
   .bodyText {
