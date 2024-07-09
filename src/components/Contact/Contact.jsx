@@ -17,24 +17,23 @@ import * as Yup from "yup";
 import ReCAPTCHA from "react-google-recaptcha";
 
 import axios from "axios";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
 
 const Contact = () => {
 	const textVariants = {
 		initial: {
-		  x: -500,
-		  opacity:0
+			x: -500,
+			opacity: 0,
 		},
 		animate: {
-		  x: 0,
-		  opacity: 1,
-		  transition: {
-			duration: 1,
-			staggerChildren: 0.1
-		  }
+			x: 0,
+			opacity: 1,
+			transition: {
+				duration: 1,
+				staggerChildren: 0.1,
+			},
 		},
-		
-	  }
+	};
 
 	const [isRecapChecked, setRecapChecked] = useState(false);
 
@@ -70,16 +69,16 @@ const Contact = () => {
 
 		if (response && response.data) {
 			setSuccess(response.data.message);
-			console.log("mail button clicked")
+			console.log("mail button clicked");
 		}
 	};
 
 	useEffect(() => {
-		if(success !== null) {
-			alert(success)
-			setSuccess(null)
+		if (success !== null) {
+			alert(success);
+			setSuccess(null);
 		}
-	},[success])
+	}, [success]);
 
 	const formik = useFormik({
 		initialValues: initialValue,
@@ -87,7 +86,6 @@ const Contact = () => {
 		validateOnBlur: true,
 		onSubmit,
 	});
-
 
 	return (
 		<div>
@@ -138,18 +136,36 @@ const Contact = () => {
 							</div>
 						</div>
 						<div className="social-media-icons">
-							<FontAwesomeIcon
-								className="icon"
-								icon={faXTwitter}
-							/>
-							<FontAwesomeIcon
-								className="icon"
-								icon={faLinkedin}
-							/>
-							<FontAwesomeIcon
-								className="icon"
-								icon={faGithub}
-							/>
+							<a
+								href="https://twitter.com/_mohawwal"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FontAwesomeIcon
+									className="icon"
+									icon={faXTwitter}
+								/>
+							</a>
+							<a
+								href="https://www.linkedin.com/in/anileleye-awwal-878556145/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FontAwesomeIcon
+									className="icon"
+									icon={faLinkedin}
+								/>
+							</a>
+							<a
+								href="https://github.com/mohawwal"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FontAwesomeIcon
+									className="icon"
+									icon={faGithub}
+								/>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -244,7 +260,7 @@ const Contact = () => {
 							disabled={!isRecapChecked}
 							className="message-btn"
 						>
-							{success ?  success : "GET IN TOUCH"}
+							{success ? success : "GET IN TOUCH"}
 						</button>
 					</form>
 				</FormikProvider>

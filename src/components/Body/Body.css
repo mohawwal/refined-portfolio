@@ -11,6 +11,11 @@
   font-family: "Inter", sans-serif;
 }
 
+.body-space {
+  position: relative;
+  z-index: 999;
+}
+
 .bodyImage {
   display: none;
 }
@@ -63,6 +68,14 @@ button a {
   display: none;
 }
 
+button, .textBlack {
+  color: black;
+}
+
+.textBlack {
+  font-size: 15px;
+}
+
 .slidingTextContainer {
   position: fixed;
   font-size: 40vh;
@@ -72,6 +85,8 @@ button a {
   width: 50%;
   font-weight: bold;
   padding: 10px;
+  background-color: aqua;
+  z-index: 0;
 }
 
 @media screen and (max-width: 499px) {
@@ -191,6 +206,7 @@ button a {
     justify-content: flex-start;
     width: 100%;
     margin-top: 100px;
+    z-index: 999;
   }
 
   .bodyText {

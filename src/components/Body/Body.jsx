@@ -70,7 +70,7 @@ export default function Body(props) {
 				</div>
 				<div className="body_button right-button">
 					<Link to="/About">
-						<button>Explore</button>
+						<button className="textBlack">Explore</button>
 					</Link>
 				</div>
 			</motion.div>
