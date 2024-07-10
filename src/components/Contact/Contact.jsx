@@ -322,7 +322,7 @@ const Contact = () => {
 							disabled={!isHuman}
 							className="message-btn"
 						>
-							{success ? success : "GET IN TOUCH"}
+							{sentLoading ? "LOADING..." : "GET IN TOUCH"}
 						</button>
 					</form>
 				</FormikProvider>
