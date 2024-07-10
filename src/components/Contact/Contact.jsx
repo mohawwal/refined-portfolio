@@ -6,8 +6,8 @@ import {
 
 import { useEffect } from "react";
 
-import loadingCar from '../File/Image/Moving car.gif'
-import loadingBall from '../File/Image/Basketball.gif'
+import loadingCar from "../File/Image/Moving car.gif";
+import loadingBall from "../File/Image/loading.gif";
 
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -45,25 +45,24 @@ const Contact = () => {
 	// 	setRecapChecked(true);
 	// };
 
-	const [isHuman, setIsHuman] = useState(null)
-	const [humanLoading, setHumanLoading] = useState(false)
+	const [isHuman, setIsHuman] = useState(null);
+	const [humanLoading, setHumanLoading] = useState(false);
 
-	const [sentLoading, setSentLoading] = useState(false)
+	const [sentLoading, setSentLoading] = useState(false);
 
 	const handleVerifyChange = (e) => {
 		const userInput = e.target.value.trim();
 
-		setHumanLoading(true)
+		setHumanLoading(true);
 		setTimeout(() => {
-			if(userInput === "4") {
-				setIsHuman(true)
-			} 
-			else {
-				setIsHuman(false)
+			if (userInput === "4") {
+				setIsHuman(true);
+			} else {
+				setIsHuman(false);
 			}
-			setHumanLoading(false)
-		}, 1000)
-	}
+			setHumanLoading(false);
+		}, 1000);
+	};
 
 	const initialValue = {
 		name: "",
@@ -81,28 +80,26 @@ const Contact = () => {
 
 	const [success, setSuccess] = useState(null);
 
-	
 	const onSubmit = async (values) => {
 		const { ...data } = values;
 
-		setSentLoading(true)
+		setSentLoading(true);
 
 		try {
-			const response = await axios
-				.post(`https://refined-portfolio-api.onrender.com/mail`, 
-			data);
+			const response = await axios.post(
+				`https://refined-portfolio-api.onrender.com/mail`,
+				data,
+			);
 			if (response && response.data) {
 				setSuccess(response.data.message);
 				console.log("mail button clicked");
 			}
-		} catch(err) {
-			if(err && err.response) console.log("Error: ", err)
+		} catch (err) {
+			if (err && err.response) console.log("Error: ", err);
 		} finally {
-			setSentLoading(false)
+			setSentLoading(false);
 		}
-
 	};
-
 
 	useEffect(() => {
 		if (success !== null) {
@@ -119,7 +116,7 @@ const Contact = () => {
 	});
 
 	return (
-		<div className="contactInfo"> 
+		<div className="contactInfo">
 			<div className="head-text">
 				<motion.h1
 					variants={textVariants}
@@ -288,16 +285,35 @@ const Contact = () => {
 
 						<div className="verify">
 							<div>VERIFY IF YOU ARE HUMAN</div>
-							<div className="human"> 
-								<input 
+							<div className="human">
+								<input
 									className="humanText"
-									type="text" 
-									placeholder="2 + 2" 
-									onChange={handleVerifyChange} 
+									type="text"
+									placeholder="2 + 2"
+									onChange={handleVerifyChange}
 								/>
-								<div className="loadingGif">{humanLoading ? <div><img src={loadingCar} alt="" /></div> : ""}</div>
+								<div className="loadingGif">
+									{humanLoading ? (
+										<div>
+											<img
+												src={loadingCar}
+												alt=""
+											/>
+										</div>
+									) : (
+										""
+									)}
+								</div>
 							</div>
-							<div>{isHuman ? <div className="humanError">VERIFIED!</div> : <div  className="errorMsg">What does a robot have for me ?</div>}</div>
+							<div>
+								{isHuman ? (
+									<div className="humanError">VERIFIED!</div>
+								) : (
+									<div className="errorMsg">
+										What does a robot have for me ?
+									</div>
+								)}
+							</div>
 						</div>
 
 						<button
@@ -311,7 +327,20 @@ const Contact = () => {
 					</form>
 				</FormikProvider>
 			</div>
-			<div className="loadingBallIcon" style={{display: sentLoading ? 'block' : 'none'}}>{sentLoading ? <div className="sendLoading"><img src={loadingBall} alt="" /></div> : ""}</div>
+			<div
+				className="loadingBallIcon"
+			>
+				{sentLoading ? (
+					<div className="sendLoading">
+						<img
+							src={loadingBall}
+							alt=""
+						/>
+					</div>
+				) : (
+					""
+				)}
+			</div>
 		</div>
 	);
 };
