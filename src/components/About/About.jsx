@@ -1,5 +1,6 @@
 import React from "react";
 import "./About.css";
+import { useRef } from "react";
 import LanguagesData from "../File/languages";
 import LanguagesElement from "./languages";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,6 +8,8 @@ import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 
 const About = (props) => {
+	const constraintsRef = useRef(null);
+
 	const textVariants = {
 		initial: {
 			x: 500,
@@ -33,12 +36,17 @@ const About = (props) => {
 					ABOUT <span>ME</span>
 				</motion.h1>
 			</div>
-			<div className="aboutImages">
-				<img
+			<motion.div
+				ref={constraintsRef}
+				className="container aboutImages"
+			>
+				<motion.img
+					drag dragConstraints={constraintsRef}
+					className="item"
 					src={props.profileImg}
 					alt=""
 				/>
-			</div>
+			</motion.div>
 			<motion.div
 				className="aboutDetails"
 				variants={textVariants}
@@ -57,12 +65,13 @@ const About = (props) => {
 					lasting impact.
 				</p>
 			</motion.div>
-			<motion.div className="about-btn" variants={textVariants}
-					initial="initial"
-					animate="animate">
-				<button>
-					VIEW MY RESUME
-				</button>
+			<motion.div
+				className="about-btn"
+				variants={textVariants}
+				initial="initial"
+				animate="animate"
+			>
+				<button>VIEW MY RESUME</button>
 			</motion.div>
 
 			<div className="about_lang">

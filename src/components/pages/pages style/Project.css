@@ -31,7 +31,7 @@
 }
 
 .icon {
-  font-size: 15px;
+  font-size: 14px;
   cursor: pointer;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .portfolio-content h4 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   height: 20%;
 }
@@ -61,7 +61,7 @@
 
 .portfolio-content p,
 .portfolio-languages ul li {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .portfolio-languages ul {

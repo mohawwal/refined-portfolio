@@ -83,7 +83,7 @@
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-weight: 900;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .about-btn button {
@@ -96,7 +96,7 @@
 }
 
 .work-screen-icon {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .work-details {
@@ -131,7 +131,7 @@
   color: rgb(232, 232, 232);
   background-color: rgb(32, 32, 32);
   line-height: 1.2;
-  font-size: 0.6rem;
+  font-size: 0.69rem;
   padding: 5px 6px;
   width: 170px;
   border-radius: 20px;
@@ -149,19 +149,19 @@
 }
 
 .experience-details h1 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
 }
 
 .experience-details span {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: rgb(197, 197, 197);
   font-style: italic;
   margin-left: 10px;
 }
 
 .experience-details p {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .experience-list ul {

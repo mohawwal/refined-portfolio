@@ -61,7 +61,7 @@ nav .mobile-nav-list {
   display: none;
   flex-direction: column;
   padding: 100px 20px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 300;
   z-index: 50;
 }
@@ -92,7 +92,7 @@ h1 span {
   } */
 
   .head-text {
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .navHeader {
@@ -100,11 +100,11 @@ h1 span {
   }
 }
 
-@media screen and (max-width: 577px) {
+/* @media screen and (max-width: 577px) {
   .mobile-nav-list li {
     margin-left: 5%;
   }
-}
+} */
 
 @media screen and (min-width: 1053px) {
   .navHome {
@@ -139,7 +139,7 @@ h1 span {
   }
 
   .screen-icon {
-    font-size: 20px;
+    font-size: 19px;
     color: rgb(253, 243, 255);
     padding: 10px;
   }
