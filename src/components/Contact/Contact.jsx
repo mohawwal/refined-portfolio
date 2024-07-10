@@ -327,20 +327,7 @@ const Contact = () => {
 					</form>
 				</FormikProvider>
 			</div>
-			<div
-				className="loadingBallIcon"
-			>
-				{sentLoading ? (
-					<div className="sendLoading">
-						<img
-							src={loadingBall}
-							alt=""
-						/>
-					</div>
-				) : (
-					""
-				)}
-			</div>
+			
 		</div>
 	);
 };
