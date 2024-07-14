@@ -25,6 +25,26 @@ const About = (props) => {
 		},
 	};
 
+	const containerVariants = {
+		hidden: { opacity: 1, scale: 0 },
+		visible: {
+			opacity: 1,
+			scale: 1,
+			transition: {
+				delayChildren: 0.3,
+				staggerChildren: 0.2,
+			},
+		},
+	};
+
+	const itemVariants = {
+		hidden: { y: 20, opacity: 0 },
+		visible: {
+			y: 0,
+			opacity: 1,
+		},
+	};
+
 	return (
 		<div className="about">
 			<div className="head-text">
@@ -41,7 +61,8 @@ const About = (props) => {
 				className="container aboutImages"
 			>
 				<motion.img
-					drag dragConstraints={constraintsRef}
+					drag
+					dragConstraints={constraintsRef}
 					className="item"
 					src={props.profileImg}
 					alt=""
@@ -75,18 +96,26 @@ const About = (props) => {
 			</motion.div>
 
 			<div className="about_lang">
-				<div className="lang-step">
+				<motion.div
+					variants={containerVariants}
+					initial="hidden"
+					animate="visible"
+					className="lang-step"
+				>
 					{LanguagesData.map((language) => {
 						return (
-							<div
+							<motion.div
 								className="lang"
 								key={language.id}
 							>
-								<LanguagesElement language={language} />
-							</div>
+								<LanguagesElement
+									itemVariants={itemVariants}
+									language={language}
+								/>
+							</motion.div>
 						);
 					})}
-				</div>
+				</motion.div>
 			</div>
 
 			<div className="work">

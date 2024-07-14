@@ -6,8 +6,8 @@ import {
 
 import { useEffect } from "react";
 
-import loadingCar from "../File/Image/Moving car.gif";
-import loadingBall from "../File/Image/loading.gif";
+// import loadingCar from "../File/Image/Moving car.gif";
+import loading from "../File/svg/loading.svg"
 
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -17,7 +17,7 @@ import "./Contact.css";
 
 import { Field, ErrorMessage, useFormik, FormikProvider } from "formik";
 import * as Yup from "yup";
-//import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import axios from "axios";
 import { motion } from "framer-motion";
@@ -38,31 +38,31 @@ const Contact = () => {
 		},
 	};
 
-	// const [isRecapChecked, setRecapChecked] = useState(false);
+	const [isRecapChecked, setRecapChecked] = useState(false);
 
-	// const onChange = () => {
-	// 	console.log("ReCAPTCHA clicked");
-	// 	setRecapChecked(true);
-	// };
+	const onChange = () => {
+		console.log("ReCAPTCHA clicked");
+		setRecapChecked(true);
+	};
 
-	const [isHuman, setIsHuman] = useState(null);
-	const [humanLoading, setHumanLoading] = useState(false);
+	// const [isHuman, setIsHuman] = useState(null);
+	// const [humanLoading, setHumanLoading] = useState(false);
 
 	const [sentLoading, setSentLoading] = useState(false);
 
-	const handleVerifyChange = (e) => {
-		const userInput = e.target.value.trim();
+	// const handleVerifyChange = (e) => {
+	// 	const userInput = e.target.value.trim();
 
-		setHumanLoading(true);
-		setTimeout(() => {
-			if (userInput === "4") {
-				setIsHuman(true);
-			} else {
-				setIsHuman(false);
-			}
-			setHumanLoading(false);
-		}, 1000);
-	};
+	// 	setHumanLoading(true);
+	// 	setTimeout(() => {
+	// 		if (userInput === "4") {
+	// 			setIsHuman(true);
+	// 		} else {
+	// 			setIsHuman(false);
+	// 		}
+	// 		setHumanLoading(false);
+	// 	}, 1000);
+	// };
 
 	const initialValue = {
 		name: "",
@@ -103,8 +103,8 @@ const Contact = () => {
 
 	useEffect(() => {
 		if (success !== null) {
-			alert(success);
 			setSuccess(null);
+			alert(success);
 		}
 	}, [success]);
 
@@ -276,14 +276,14 @@ const Contact = () => {
 							/>
 						</div>
 
-						{/* <div className="recap">
+						<div className="recap">
 							<ReCAPTCHA
 								sitekey={process.env.REACT_APP_SITE_KEY}
 								onChange={onChange}
 							/>
-						</div> */}
+						</div>
 
-						<div className="verify">
+						{/* <div className="verify">
 							<div>VERIFY IF YOU ARE HUMAN</div>
 							<div className="human">
 								<input
@@ -314,15 +314,17 @@ const Contact = () => {
 									</div>
 								)}
 							</div>
-						</div>
+						</div> */}
 
 						<button
 							type="submit"
-							// disabled={!isRecapChecked}
-							disabled={!isHuman}
+							disabled={!isRecapChecked}
+							//disabled={!isHuman}
 							className="message-btn"
 						>
-							{sentLoading ? "LOADING..." : "GET IN TOUCH"}
+							{sentLoading ? <div className="loadingAnim">
+								<p>Loading</p><img src={loading} alt="" />
+							</div> : (<div>{!success ? "GET IN TOUCH" : "MESSAGE DELIVERED"}</div>)}
 						</button>
 					</form>
 				</FormikProvider>

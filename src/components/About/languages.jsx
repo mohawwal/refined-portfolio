@@ -1,14 +1,15 @@
 import React from "react";
+import { motion } from "framer-motion";
 
-const LanguagesElement = ({ language }) => {
+const LanguagesElement = ({ language, itemVariants }) => {
 	return (
-		<div className="about_img">
+		<motion.div variants={itemVariants} className="about_img">
 			<img
 				src={language.image}
 				alt={language.name + "icon"}
 			/>
 			<p>{language.name}</p>
-		</div>
+		</motion.div>
 	);
 };
 
