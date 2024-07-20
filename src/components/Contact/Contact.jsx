@@ -323,7 +323,7 @@ const Contact = () => {
 							className="message-btn"
 						>
 							{sentLoading ? <div className="loadingAnim">
-								<p>Loading</p><img src={loading} alt="" />
+								<p>Loading...</p><img src={loading} alt="" />
 							</div> : (<div>{!success ? "GET IN TOUCH" : "MESSAGE DELIVERED"}</div>)}
 						</button>
 					</form>
