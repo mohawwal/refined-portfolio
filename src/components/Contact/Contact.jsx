@@ -4,25 +4,38 @@ import {
 	faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { useEffect } from "react";
-
-import loadingCar from "../File/Image/Moving car.gif";
-import loading from "../File/svg/loading.svg"
-
+import ReCAPTCHA from "react-google-recaptcha";
+import { sendMessage } from "../../action/contactAction";
+import { useDispatch, useSelector } from "react-redux";
+import ClipLoader from "react-spinners/ClipLoader";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useContext } from "react";
 import "./Contact.css";
 
 import { Field, ErrorMessage, useFormik, FormikProvider } from "formik";
 import * as Yup from "yup";
-//import ReCAPTCHA from "react-google-recaptcha";
 
-import axios from "axios";
 import { motion } from "framer-motion";
+import AlertContext from "../alert/AlertContext"
+
+
+
 
 const Contact = () => {
+	const dispatch = useDispatch();
+	const recaptcha = useRef()
+
+	const [, setAlert] = useContext(AlertContext)
+	const showAlert = (message, type) => {
+		setAlert({
+			message,
+			type
+		})
+	}
+
+
 	const textVariants = {
 		initial: {
 			x: -500,
@@ -38,31 +51,22 @@ const Contact = () => {
 		},
 	};
 
-	// const [isRecapChecked, setRecapChecked] = useState(false);
+	const { message, error, loading, delivered } = useSelector(
+		(state) => state.contact,
+	);
 
-	// const onChange = () => {
-	// 	console.log("ReCAPTCHA clicked");
-	// 	setRecapChecked(true);
-	// };
+	const recaptchaSiteKey = process.env.REACT_APP_SITE_KEY
+	
+	useEffect(() => {
+		if (error) {
+			showAlert(error, 'error');
+		}
 
-	const [isHuman, setIsHuman] = useState(null);
-	const [humanLoading, setHumanLoading] = useState(false);
+		if (delivered) {
+			showAlert(message, 'success')
+		}
+	}, [delivered, error, message]);
 
-	const [sentLoading, setSentLoading] = useState(false);
-
-	const handleVerifyChange = (e) => {
-		const userInput = e.target.value.trim();
-
-		setHumanLoading(true);
-		setTimeout(() => {
-			if (userInput === "4") {
-				setIsHuman(true);
-			} else {
-				setIsHuman(false);
-			}
-			setHumanLoading(false);
-		}, 1000);
-	};
 
 	const initialValue = {
 		name: "",
@@ -78,35 +82,31 @@ const Contact = () => {
 		message: Yup.string().min(3).required("Message is required"),
 	});
 
-	const [success, setSuccess] = useState(null);
 
-	const onSubmit = async (values) => {
-		const { ...data } = values;
+	const onSubmit = async (values, { resetForm }) => {
+		const captchaValue = recaptcha.current.getValue()
+		if (!captchaValue) {
+			showAlert('Please verify the reCAPTCHA!', "warning");
+			return
+		} 
+	
 
-		setSentLoading(true);
+		let formData = new FormData();
 
-		try {
-			const response = await axios.post(
-				`https://refined-portfolio-api.onrender.com/mail`,
-				data,
-			);
-			if (response && response.data) {
-				setSuccess(response.data.message);
-				console.log("mail button clicked");
-			}
-		} catch (err) {
-			if (err && err.response) console.log("Error: ", err);
-		} finally {
-			setSentLoading(false);
-		}
+		formData.append("name", values.name);
+		formData.append("email", values.email);
+		formData.append("subject", values.subject);
+		formData.append("message", values.message);
+
+		dispatch(sendMessage(formData))
+			.then(() => {
+				resetForm();
+				recaptcha.current.reset();
+			}).catch((error) => {
+                setAlert(error, 'error')
+            });
+
 	};
-
-	useEffect(() => {
-		if (success !== null) {
-			setSuccess(null);
-			alert(success);
-		}
-	}, [success]);
 
 	const formik = useFormik({
 		initialValues: initialValue,
@@ -276,60 +276,30 @@ const Contact = () => {
 							/>
 						</div>
 
-						{/* <div className="recap">
-							<ReCAPTCHA
-								sitekey={process.env.REACT_APP_SITE_KEY}
-								onChange={onChange}
-							/>
-						</div> */}
-
-						<div className="verify">
-							<div>VERIFY IF YOU ARE HUMAN</div>
-							<div className="human">
-								<input
-									className="humanText"
-									type="text"
-									placeholder="2 + 2"
-									onChange={handleVerifyChange}
-								/>
-								<div className="loadingGif">
-									{humanLoading ? (
-										<div>
-											<img
-												src={loadingCar}
-												alt=""
-											/>
-										</div>
-									) : (
-										""
-									)}
-								</div>
-							</div>
-							<div>
-								{isHuman ? (
-									<div className="humanError">VERIFIED!</div>
-								) : (
-									<div className="errorMsg">
-										What does a robot have for me ?
-									</div>
-								)}
-							</div>
+						<div className="recap">
+							<ReCAPTCHA  ref={recaptcha} sitekey={recaptchaSiteKey} />
 						</div>
 
 						<button
 							type="submit"
-							//disabled={!isRecapChecked}
-							disabled={!isHuman}
-							className="message-btn"
+							//disabled={!formik.isValid || !formik.dirty}
+							className={!formik.isValid || !formik.dirty ? "notMessage-btn" : "message-btn"}
 						>
-							{sentLoading ? <div className="loadingAnim">
-								<p>Loading...</p><img src={loading} alt="" />
-							</div> : (<div>{!success ? "GET IN TOUCH" : "MESSAGE DELIVERED"}</div>)}
+							{loading ? (
+								<div className="loadingAnim">
+									<ClipLoader
+										color="black"
+										loading={true}
+										size={26}
+									/>
+								</div>
+							) : (
+								<div>GET IN TOUCH</div>
+							)}
 						</button>
 					</form>
 				</FormikProvider>
 			</div>
-			
 		</div>
 	);
 };

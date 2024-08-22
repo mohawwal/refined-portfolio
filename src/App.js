@@ -8,6 +8,8 @@ import Portfolio from './components/Portfolio/Portfolio.jsx';
 import Contact from './components/Contact/Contact.jsx';
 import profileImg from './components/File/Image/profile-img.JPG'
 
+import Alert from './components/alert/alert.js'
+
 const App = () => {
   
 
@@ -15,6 +17,9 @@ const App = () => {
     <div>
       <BrowserRouter>
         <Nav/>
+        <div>
+					<Alert />
+				</div>
         <Routes>
             <Route path='/' element={<Body profileImg={profileImg}/> } />
             <Route path='/About' element={<About profileImg={profileImg}/>} />

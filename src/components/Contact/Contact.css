@@ -152,6 +152,15 @@
   max-height: 60px;
 }
 
+.notMessage-btn {
+  width: 30%;
+  max-height: 60px;
+  z-index: 100;
+  color: rgba(240, 240, 240, 0.407);
+  background-color: #b76bff5f;
+  cursor: not-allowed;
+}
+
 .recap {
   margin-top: 20px;
 }
@@ -263,6 +272,10 @@
   .message-btn {
     width: 40%;
   }
+  .notMessage-btn {
+    width: 40%;
+  }
+
   .contact-details {
     width: 94%;
     margin: 0 auto;
@@ -280,6 +293,10 @@
     height: 200px;
   }
   .message-btn {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .notMessage-btn {
     width: 100%;
     margin-bottom: 20px;
   }
