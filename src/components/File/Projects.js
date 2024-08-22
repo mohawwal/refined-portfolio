@@ -1,9 +1,9 @@
 let data_product = [
 	{
 		id: 1,
-		name: "ZARMARIO E-COMMERCE",
+		name: "ZARMARIO E-COMMERCE APP",
 		description:
-			"A full-stack web app built using MongoDB, Express, React, Node.js. The project features both client & server-side implementations, providing a seamless user experience. The client-side incorporates Redux for efficient state management and ensuring a responsive and interactive interface. The server-side, handles the backend operations, including user authentication, product management, and order processing.",
+			"A full-stack web app built using MongoDB, Express, React, Node.js. The project features both client & server-side implementations, providing a seamless user experience. The client-side incorporates Redux for efficient state management. The server-side, handles the backend operations, including user authentication, product management, and order processing.",
 		githubLink: "https://github.com/mohawwal/shopIt-API",
 		webLink: "https://zarmario.vercel.app/",
 		languages: ["Node.js", "React", "Mongoose", "Express"],
