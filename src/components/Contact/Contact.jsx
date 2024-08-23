@@ -72,7 +72,7 @@ const Contact = () => {
 		}
 
 		if (delivered) {
-			showAlert('Message Delivered', "success");
+			showAlert('Message Delivered😊', "success");
 		}
 	}, [delivered, error]);
 

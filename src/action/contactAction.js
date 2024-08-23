@@ -10,7 +10,7 @@ export const sendMessage = (messageData) => async (dispatch) => {
 	try {
 		dispatch({ type: CONTACT_ME_REQUEST });
 
-		const { data } = await axios.post("/mail", messageData, {
+		const { data } = await axios.post("https://refined-portfolio-api.onrender.com/mail", messageData, {
 			headers: {
 				'Content-Type': 'application/json'
 			}
