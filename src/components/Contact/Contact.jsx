@@ -46,7 +46,7 @@ const Contact = () => {
 		},
 	};
 
-	const { message, error, loading, delivered } = useSelector(
+	const { error, loading, delivered } = useSelector(
 		(state) => state.contact,
 	);
 
@@ -72,9 +72,9 @@ const Contact = () => {
 		}
 
 		if (delivered) {
-			showAlert(message, "success");
+			showAlert('Message Delivered', "success");
 		}
-	}, [delivered, error, message]);
+	}, [delivered, error]);
 
 	const initialValue = {
 		name: "",
