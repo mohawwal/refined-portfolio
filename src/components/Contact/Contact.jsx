@@ -107,7 +107,7 @@ const Contact = () => {
 		dispatch(sendMessage(formData))
 			.then(() => {
 				resetForm();
-				setIsVerify(false)
+				setIsVerify(true)
 			})
 			.catch((error) => {
 				setAlert(error, "error");
