@@ -11,30 +11,25 @@ import ClipLoader from "react-spinners/ClipLoader";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useRef, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./Contact.css";
 
 import { Field, ErrorMessage, useFormik, FormikProvider } from "formik";
 import * as Yup from "yup";
 
 import { motion } from "framer-motion";
-import AlertContext from "../alert/AlertContext"
-
-
-
+import AlertContext from "../alert/AlertContext";
 
 const Contact = () => {
 	const dispatch = useDispatch();
-	const recaptcha = useRef()
 
-	const [, setAlert] = useContext(AlertContext)
+	const [, setAlert] = useContext(AlertContext);
 	const showAlert = (message, type) => {
 		setAlert({
 			message,
-			type
-		})
-	}
-
+			type,
+		});
+	};
 
 	const textVariants = {
 		initial: {
@@ -55,18 +50,31 @@ const Contact = () => {
 		(state) => state.contact,
 	);
 
-	const recaptchaSiteKey = process.env.REACT_APP_SITE_KEY
-	
+	const No1 = Math.floor(Math.random() * 5) + 1;
+	const No2 = Math.floor(Math.random() * 5) + 1;
+	const totalNo = No1 + No2;
+
+	const [isVerify, setIsVerify] = useState(false);
+
+	const verifyFunc = (e) => {
+		const inputVerifyNo = parseInt(e.target.value);
+
+		if (totalNo === inputVerifyNo) {
+			setIsVerify(true);
+		} else {
+			setIsVerify(false);
+		}
+	};
+
 	useEffect(() => {
 		if (error) {
-			showAlert(error, 'error');
+			showAlert(error, "error");
 		}
 
 		if (delivered) {
-			showAlert(message, 'success')
+			showAlert(message, "success");
 		}
 	}, [delivered, error, message]);
-
 
 	const initialValue = {
 		name: "",
@@ -84,13 +92,11 @@ const Contact = () => {
 
 
 	const onSubmit = async (values, { resetForm }) => {
-		const captchaValue = recaptcha.current.getValue()
-		if (!captchaValue) {
-			showAlert('Please verify the reCAPTCHA!', "warning");
+		if(!isVerify) {
+			setAlert('verification incomplete', 'error') 
 			return
-		} 
-	
-
+		}
+		
 		let formData = new FormData();
 
 		formData.append("name", values.name);
@@ -101,11 +107,11 @@ const Contact = () => {
 		dispatch(sendMessage(formData))
 			.then(() => {
 				resetForm();
-				recaptcha.current.reset();
-			}).catch((error) => {
-                setAlert(error, 'error')
-            });
-
+				setIsVerify(false)
+			})
+			.catch((error) => {
+				setAlert(error, "error");
+			});
 	};
 
 	const formik = useFormik({
@@ -276,14 +282,34 @@ const Contact = () => {
 							/>
 						</div>
 
-						<div className="recap">
-							<ReCAPTCHA  ref={recaptcha} sitekey={recaptchaSiteKey} />
+						<div className="verifyHuman">
+							<div>
+								{!isVerify ? (
+									<p className="verifyQst">
+										{No1} + {No2} =
+									</p>
+								) : null}
+							</div>
+							<input
+								type="number"
+								onChange={verifyFunc}
+								placeholder="Answer ?"
+							/>
 						</div>
+						{isVerify ? (
+							<p className="verifyText">Verified 👍</p>
+							) : (
+							<p className="verifyErrorMsg">Not Verified</p>
+						)}
 
 						<button
 							type="submit"
 							//disabled={!formik.isValid || !formik.dirty}
-							className={!formik.isValid || !formik.dirty ? "notMessage-btn" : "message-btn"}
+							className={
+								!formik.isValid || !formik.dirty || !isVerify
+									? "notMessage-btn"
+									: "message-btn"
+							}
 						>
 							{loading ? (
 								<div className="loadingAnim">

@@ -169,82 +169,34 @@
   margin-top: 15px;
 }
 
-.humanError {
-  margin-top: 10px;
-  font-size: 13px;
-  color: rgb(159, 174, 251);
+.verifyErrorMsg {
+  font-size: 0.85rem;
+  color: #ff505f;
 }
 
-.human {
-  width: 200px;
-  height: 40px;
-  position: relative;
-}
-
-.humanText {
-  border-radius: 5px;
-  background-color: rgb(9, 79, 112);
-  border: 1px solid rgb(146, 146, 146);
-  background-color: rgb(255, 255, 255);
-  margin-top: 5px;
-  padding: 10px;
-  height: 30px;
-  color: rgb(0, 0, 0);
-  width: 100%;
-  height: 100%;
+.verifyText {
+  font-size: 0.85rem;
+  color: rgb(171, 249, 54);
 }
 
 .contactInfo {
   position: relative;
 }
 
-.loadingGif {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  width: 80%;
-}
-
-.loadingBallIcon {
-  position: absolute;
-  z-index: 60;
-  width: 100%;
-  height: 100vh; 
-  top: 0;
-  left: 0; 
-}
-
-.sendLoading {
+.verifyHuman {
+  margin: 20px 0 5px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  font-size: 1rem;
+}
+
+.verifyHuman input {
+  border: none;
   background-color: transparent;
-  margin-top: 50%;
-  width: 100%;
-  height: 100vh;
+  color: white;
+  margin-left: 5px;
+  font-size: 1rem;
 }
-
-.sendLoading img {
-  width: 140px;
-  height: 140px;
-  background-color: rgba(245, 245, 245, 0.51);
-  border-radius: 20px;
-  padding: 10px;
-}
-
-.loadingAnim {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-.loadingAnim img {
-  width: 20px;
-  height: 20px;
-}
-
 
 @media (min-width: 1100px) and (max-width: 1354px) {
   .contact-details {
