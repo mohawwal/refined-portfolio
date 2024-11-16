@@ -1,5 +1,14 @@
 let data_product = [
 	{
+		id: 0,
+		name: "SOCIAL MEDIA WEBAPP",
+		description:
+			"A full-stack social media webapp where users can add post, like, rt & bookmark posts, and send direct messages (DM)",
+		githubLink: "https://t.co/LZCFjcRg9s",
+		webLink: "https://x.com/_mohawwal/status/1857559658719764749",
+		languages: ["Node.js", "React", "MySQL", "Express"],
+	},
+	{
 		id: 1,
 		name: "ZARMARIO E-COMMERCE APP",
 		description:
