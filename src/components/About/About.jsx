@@ -92,8 +92,11 @@ const About = (props) => {
 				initial="initial"
 				animate="animate"
 			>
-				<button>VIEW MY RESUME</button>
+				<a href="https://drive.google.com/file/d/1UChOircqKcBLFqvv9XHUqfah6fAY5bRs/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+					<button>VIEW MY RESUME</button>
+				</a>
 			</motion.div>
+
 
 			<div className="about_lang">
 				<motion.div

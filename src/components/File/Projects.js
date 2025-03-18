@@ -1,5 +1,13 @@
 let data_product = [
 	{
+		"id": 7,
+		"name": "Real-time Coin Stats",
+		"description": "A cryptocurrency tracking web app that provides real-time updates on various coins, displaying their market cap, price changes, and other key metrics.",
+		"githubLink": "https://github.com/mohawwal/Cryptocurrency-Tracker",
+		"webLink": "https://cryptocurrency-tracker-beige.vercel.app/",
+		"languages": ["Vue 3", "Vite", "Tailwind"]
+	},
+	{
 		id: 0,
 		name: "SALES DETAL DASHBOARD",
 		description:
@@ -27,15 +35,15 @@ let data_product = [
 		languages: ["Node.js", "React", "Mongoose", "Express"],
 	},
 
-	{
-		id: 3,
-		name: "E-COMMERCE",
-		description:
-			"Discover and order your favorite burgers effortlessly on our e-commerce platform. Browse, add to cart, and search for your desired burgers with ease.",
-		githubLink: "",
-		webLink: "https://merita-burger.vercel.app",
-		languages: ["CSS", "ANGULAR", "TYPESCRIPT"],
-	},
+	// {
+	// 	id: 3,
+	// 	name: "E-COMMERCE",
+	// 	description:
+	// 		"Discover and order your favorite burgers effortlessly on our e-commerce platform. Browse, add to cart, and search for your desired burgers with ease.",
+	// 	githubLink: "",
+	// 	webLink: "https://merita-burger.vercel.app",
+	// 	languages: ["CSS", "ANGULAR", "TYPESCRIPT"],
+	// },
 	{
 		id: 4,
 		name: "TO-DO LIST",
